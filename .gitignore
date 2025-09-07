@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.log
+
+# uv virtual environment
+.venv/
+
+# uv lock and build artifacts
+uv.lock
+build/
+dist/
+
+# Local settings
+*.env
+.envrc
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp

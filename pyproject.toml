@@ -1,0 +1,14 @@
+[project]
+name = "prism-hack"
+version = "0.1.0"
+description = "Project for the Samsung Gen AI Hack"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "liboqs-python",
+    "oqs>=0.10.2",
+    "pillow>=11.3.0",
+]
+
+[tool.uv.sources]
+liboqs-python = { git = "https://github.com/open-quantum-safe/liboqs-python.git" }

@@ -19,6 +19,12 @@ COPY requirements.txt pyproject.toml ./
 # First install uv for faster dependency management
 RUN pip install uv
 
+# Install liboqs-python manually
+RUN git clone https://github.com/open-quantum-safe/liboqs-python /tmp/liboqs-python && \
+    cd /tmp/liboqs-python && \
+    uv pip install --system . && \
+    rm -rf /tmp/liboqs-python
+
 # Install dependencies using uv for faster installation
 RUN uv pip install --system -r requirements.txt
 

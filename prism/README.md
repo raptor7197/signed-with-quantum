@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+# Frontend README
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Prerequisites
 
-## Get started
+Ensure you have the following installed before setting up the project:
 
-1. Install dependencies
+- Node.js 20 (or LTS 20.x)
+- npm or yarn installed
+- Expo CLI (`npm install -g expo-cli`)
+- EAS CLI (`npm install -g eas-cli`)
 
-   ```bash
-   npm install
-   ```
+## Installing Dependencies
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Install dependencies using either:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+or
 
-## Learn more
+```bash
+yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Backend Server Setup
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+In `PreviewScreen.tsx` and `MediaScreen.tsx`, replace API endpoints:
 
-## Join the community
+- For local development:
 
-Join our community of developers creating universal apps.
+  - `"<DOMAIN>/save"` → `http://<localip>:<port>/save`
+  - `"<DOMAIN>/verify"` → `http://<localip>:<port>/verify`
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- For deployment:
+  - Use the deployed backend URL in place of `"<DOMAIN>"`.
+
+Refer to the [Backend README](../backend/README.md) for backend setup.
+
+## Prebuild
+
+Run prebuild before native builds:
+
+```bash
+npx expo prebuild
+```
+
+## Android Development
+
+### Building with EAS
+
+Development build (APK):
+
+```bash
+eas build --platform android --profile development
+```
+
+Start the Expo development server for local development:
+
+```bash
+npx expo start
+```
+
+Preview build (APK):
+
+```bash
+eas build --platform android --profile preview
+```
+
+The generated APK can be downloaded and installed for testing.

@@ -11,7 +11,11 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Camera, CameraPermissionStatus } from "react-native-vision-camera";
+import {
+  Camera,
+  CameraPermissionStatus,
+  useCameraPermission,
+} from "react-native-vision-camera";
 
 const ICON_SIZE = 26;
 
@@ -20,6 +24,7 @@ export default function PermissionsScreen() {
     useState<CameraPermissionStatus>("not-determined");
   const [mediaLibraryPermission, requestMediaLibraryPermission] =
     usePermissions();
+  const { hasPermission } = useCameraPermission();
 
   const requestCameraPermission = async () => {
     const permission = await Camera.requestCameraPermission();
@@ -27,10 +32,7 @@ export default function PermissionsScreen() {
   };
 
   const handleContinue = () => {
-    if (
-      cameraPermissionStatus === "granted" &&
-      mediaLibraryPermission?.granted
-    ) {
+    if (hasPermission && mediaLibraryPermission?.granted) {
       router.replace("/");
     } else {
       Alert.alert("Please enable all required permissions.");
@@ -64,7 +66,7 @@ export default function PermissionsScreen() {
           </View>
           <Switch
             trackColor={{ true: "orange" }}
-            value={cameraPermissionStatus === "granted"}
+            value={hasPermission}
             onChange={requestCameraPermission}
           />
         </View>

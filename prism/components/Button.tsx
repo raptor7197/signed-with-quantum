@@ -15,6 +15,7 @@ interface ButtonProps {
   iconName?: ComponentProps<typeof Ionicons>["name"];
   containerStyle?: StyleProp<ViewStyle>;
   iconSize?: number;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -23,10 +24,12 @@ export default function Button({
   iconName,
   containerStyle,
   iconSize,
+  disabled = false,
 }: ButtonProps) {
   return (
     <TouchableOpacity
       onPress={onPress}
+      disabled={disabled}
       style={[
         styles.container,
         {
@@ -41,7 +44,13 @@ export default function Button({
         <Ionicons name={iconName} size={iconSize ?? 28} color="#fff" />
       )}
       {title ? (
-        <Text style={{ fontSize: 14, fontWeight: "600", color: "#fff" }}>
+        <Text
+          style={{
+            fontSize: 14,
+            fontWeight: "600",
+            color: disabled ? "#ffffff50" : "#fff",
+          }}
+        >
           {title}
         </Text>
       ) : null}

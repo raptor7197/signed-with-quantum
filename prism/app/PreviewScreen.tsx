@@ -63,12 +63,13 @@ export default function PreviewScreen() {
         />
       )}
       <Button
-        title={saving ? "Working on it..." : "Save"}
+        title={saving ? "Signing the image... hang tight" : "Save"}
         containerStyle={{ alignSelf: "center" }}
         onPress={async () => {
           if (saving) return;
           await saveImage(media as string);
         }}
+        disabled={saving ? true : false}
       />
       <Link href="/" style={styles.link} disabled={saving}>
         <ThemedText type="link">Delete and go back</ThemedText>

@@ -3,7 +3,7 @@ import { ThemedText } from "@/components/themed-text";
 import ZoomControls from "@/components/ZoomControls";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Redirect, useRouter } from "expo-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Platform,
   StatusBar,
@@ -18,6 +18,7 @@ import {
   useCameraPermission,
 } from "react-native-vision-camera";
 import Button from "../components/Button";
+import { getPermissionsAsync } from "expo-media-library";
 
 export default function HomeScreen() {
   const { hasPermission } = useCameraPermission();
@@ -34,6 +35,17 @@ export default function HomeScreen() {
   const [torch, setTorch] = useState<"off" | "on">("off");
   const camera = useRef<Camera>(null);
   const router = useRouter();
+  const [hasMediaPermission, setHasMediaPermission] = useState<boolean | null>(
+    null
+  );
+
+  useEffect(() => {
+    const checkPermissions = async () => {
+      const media = await getPermissionsAsync();
+      setHasMediaPermission(media.granted);
+    };
+    checkPermissions();
+  }, []);
 
   const takePicture = async () => {
     if (takingPhoto) return;
@@ -55,7 +67,10 @@ export default function HomeScreen() {
     }
   };
 
-  if (!hasPermission) return <Redirect href="/PermissionsScreen" />;
+  if (hasMediaPermission === null) return <></>;
+  if (!hasPermission || !hasMediaPermission) {
+    return <Redirect href="/PermissionsScreen" />;
+  }
   if (!device) return <></>;
 
   return (

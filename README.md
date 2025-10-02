@@ -16,6 +16,23 @@ The project consists of two main components:
 *   **[Backend](./backend/README.md)**: A Python-based backend service that uses post-quantum cryptography to sign and verify digital images.
 *   **[Prism](./prism/README.md)**: An Expo-based mobile application that interacts with the backend.
 
+## Tech arsenal
+```mermaid
+graph TD;
+A["Signed with Quantum"] --> B["App development"]
+A --> C["AI/ML Engineering"]
+A --> D["Quantum Encryption"]
+
+B --> B1["React Native(Expo)"]
+B --> B2["FastAPI Backend"]
+
+C --> C1["Vision-Language Model"]
+C --> C2["BLIP"]
+
+D --> D1["liboqs-python"]
+D --> D2["Open Quantum Safe (OQS)"]
+```
+
 ## Global Setup
 
 To set up and run this project, you will need to follow the setup instructions for each sub-project individually.

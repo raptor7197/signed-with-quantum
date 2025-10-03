@@ -2,7 +2,7 @@
 
 A quantum-safe cryptographic signature implementation for the Samsung Gen AI Hack, utilizing post-quantum cryptography algorithms to sign and verify digital images.
 
-## 📋 Table of Contents
+##  Index
 - [Overview](#overview)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
@@ -12,11 +12,11 @@ A quantum-safe cryptographic signature implementation for the Samsung Gen AI Hac
 - [Development](#development)
 - [Troubleshooting](#troubleshooting)
 
-## 🔍 Overview
+##  Overview Of the project 
 
 This project implements quantum-resistant digital signatures using the Dilithium2 algorithm from the Open Quantum Safe (OQS) library. It provides functionality to sign images and verify their authenticity, protecting against tampering even in a post-quantum computing era.
 
-## ✨ Features
+##  Features of this Project 
 
 - **Quantum-Safe Signatures**: Uses Dilithium2 algorithm for post-quantum security
 - **Image Signing**: Sign JPEG images with quantum-resistant signatures
@@ -24,7 +24,7 @@ This project implements quantum-resistant digital signatures using the Dilithium
 - **Cross-Platform**: Works on Windows, Linux, and macOS
 - **Modern Python**: Built with Python 3.13 and managed with uv
 
-## 📦 Prerequisites
+##  Prerequisites
 
 ### System Requirements
 - Python 3.13 or higher
@@ -33,6 +33,18 @@ This project implements quantum-resistant digital signatures using the Dilithium
   - **Linux**: gcc or clang
   - **Windows**: Visual Studio Build Tools or MinGW
   - **macOS**: Xcode Command Line Tools
+
+## Setup
+
+To run this project, you will need to have the `liboqs` library compiled and installed on your system. You can find instructions on how to do this in the [official `liboqs` GitHub repository](https://github.com/open-quantum-safe/liboqs).
+
+Please be aware that you might encounter some issues while compiling the library.
+
+You will also need to install the Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
 
 ### Installing uv
 
@@ -63,13 +75,13 @@ After installation, verify uv is installed:
 uv --version
 ```
 
-## 🚀 Installation
+##  Installation
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Prism-hack.git
-cd Prism-hack
+git clone https://github.com/raptor7197/signed-with-quantum.git
+cd signed-with-quantum
 ```
 
 ### 2. Install Python 3.13
@@ -120,7 +132,7 @@ source .venv/bin/activate
 .venv\Scripts\Activate.ps1
 ```
 
-## 📁 Project Structure
+##  Project Folder Structure
 
 ```
 Prism-hack/
@@ -137,7 +149,7 @@ Prism-hack/
 └── README.md              # This file
 ```
 
-## 💻 Usage
+##  Usage
 
 ### Running Scripts with uv
 
@@ -145,10 +157,14 @@ You can run Python scripts directly with uv without activating the virtual envir
 
 ```bash
 # Run the image signing example
-uv run python idk.py
+uv run python main.py
 
 # Run the test implementation
 uv run python test_implementation.py
+
+# Run the test implementation with Image
+uv run python test_implementation_with_image.py
+
 ```
 
 ### Running Scripts with Activated Environment
@@ -157,7 +173,7 @@ If you've activated the virtual environment:
 
 ```bash
 # Run the image signing example
-python idk.py
+python main.py
 
 # Run the test implementation
 python test_implementation.py
@@ -186,7 +202,7 @@ with oqs.Signature("Dilithium2") as signer:
     print("Signature valid?", valid)
 ```
 
-## 🛠️ Development
+##  Development
 
 ### Adding Dependencies
 
@@ -223,13 +239,23 @@ uv run python -m pytest
 python -m pytest
 ```
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
 #### 1. liboqs-python Build Fails
 
 If the liboqs-python build fails, ensure you have the required build tools:
+This Library has to be compiled from scratch from the Github repo so...
+This has been Included in the Dockerfile.
+ ```bash
+cd ..
+git clone https://github.com/open-quantum-safe/oqs-python.git
+cd oqs-python
+pip install .
+
+ ```
+
 
 **Linux:**
 ```bash
@@ -289,32 +315,40 @@ uv sync
 ```
 
 ## 📄 Dependencies
-
 The project uses the following main dependencies:
 
-- **liboqs-python**: Post-quantum cryptography library (installed from GitHub)
-- **oqs** (>=0.10.2): Open Quantum Safe Python bindings
+- **liboqs-python**: Post-quantum cryptography library (installed from GitHub, not PyPI)
+- **oqs** (>=0.10.2): Open Quantum Safe Python bindings for post-quantum algorithms
 - **Pillow** (>=11.3.0): Python Imaging Library for image processing
 
-## 🤝 Contributing
+Other dependencies may be specified in `pyproject.toml` as needed for development or testing. 
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
-## 📝 License
 
-This project is part of the Samsung Gen AI Hack. Please refer to the LICENSE file for details.
 
-## 🔗 Resources
 
-- [uv Documentation](https://github.com/astral-sh/uv)
-- [Open Quantum Safe](https://openquantumsafe.org/)
-- [liboqs-python GitHub](https://github.com/open-quantum-safe/liboqs-python)
-- [Post-Quantum Cryptography](https://en.wikipedia.org/wiki/Post-quantum_cryptography)
 
-## 📧 Contact
 
-For questions or issues related to this project, please open an issue on GitHub.
+
+
+
+
+
+
+## Running the Application
+
+To run the application, you can use the following command:
+
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+## Connecting to the Frontend
+
+After building the application, you will need to link the backend to the frontend by providing the backend URL to the frontend application.
+
+## Deployment
+
+A Dockerfile is provided for containerizing the application. However, there might be some issues with the library compilation and the Dockerfile when deploying the application.
+
+

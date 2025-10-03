@@ -142,7 +142,7 @@ export default function HomeScreen() {
               />
               <Button
                 iconName="settings-outline"
-                onPress={() => router.push("/_sitemap")}
+                onPress={() => router.push("/ApiConfigScreen")}
                 containerStyle={{ alignSelf: "center" }}
               />
             </View>

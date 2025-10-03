@@ -6,6 +6,7 @@ import * as MediaLibrary from "expo-media-library";
 import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
 import { Alert, Image, StyleSheet } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function arrayBufferToBase64(buffer: ArrayBuffer) {
   let binary = "";
@@ -25,13 +26,14 @@ export default function PreviewScreen() {
   const saveImage = async (uri: string) => {
     try {
       setSaving(true);
+      const apiBaseUrl = await AsyncStorage.getItem("API_URL");
       const formData = new FormData();
       formData.append("file", {
         uri: `file://${uri}`,
         type: "image/jpeg",
         name: "photo.jpg",
       } as any);
-      const response = await fetch("<DOMAIN>/save", {
+      const response = await fetch(`${apiBaseUrl}/save`, {
         method: "POST",
         body: formData,
       });

@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "prism",
-    "slug": "prism",
+    "name": "signed-with-quantum",
+    "slug": "signed-with-quantum",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "prism",
+    "scheme": "frontend",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -13,9 +13,10 @@
       "infoPlist": {
         "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera."
       },
-      "bundleIdentifier": "com.gobiananthx.prism"
+      "bundleIdentifier": "com.gobiananthx.frontend"
     },
     "android": {
+      "jsEngine": "hermes",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -27,7 +28,7 @@
       "permissions": [
         "android.permission.CAMERA"
       ],
-      "package": "com.gobiananthx.prism"
+      "package": "com.gobiananthx.frontend"
     },
     "web": {
       "output": "static",
@@ -61,7 +62,6 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "3bd8ae24-9e56-460b-8285-ac9f9ce048b5"
       }
     }
   }

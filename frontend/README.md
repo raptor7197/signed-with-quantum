@@ -23,20 +23,6 @@ or
 yarn install
 ```
 
-## Backend Server Setup
-
-In `PreviewScreen.tsx` and `MediaScreen.tsx`, replace API endpoints:
-
-- For local development:
-
-  - `"<DOMAIN>/save"` → `http://<localip>:<port>/save`
-  - `"<DOMAIN>/verify"` → `http://<localip>:<port>/verify`
-
-- For deployment:
-  - Use the deployed backend URL in place of `"<DOMAIN>"`.
-
-Refer to the [Backend README](../backend/README.md) for backend setup.
-
 ## Prebuild
 
 Run prebuild before native builds:

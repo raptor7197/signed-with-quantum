@@ -23,6 +23,10 @@ export default function RootLayout() {
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen
+            name="ApiConfigScreen"
+            options={{ presentation: "modal", headerTitle: "Config" }}
+          />
+          <Stack.Screen
             name="PreviewScreen"
             options={{ presentation: "modal", headerTitle: "Preview" }}
           />

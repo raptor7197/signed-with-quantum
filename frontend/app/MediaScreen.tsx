@@ -7,6 +7,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import * as FileSystem from "expo-file-system/legacy";
 import Button from "../components/Button";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function MediaScreen() {
   const { media, type } = useLocalSearchParams();
@@ -24,6 +25,7 @@ export default function MediaScreen() {
   const verifyImage = async (fileUri: string) => {
     try {
       setLoading(true);
+      const apiBaseUrl = await AsyncStorage.getItem("API_URL");
       const localUri = `${FileSystem.cacheDirectory}${Date.now()}.jpg`;
       await FileSystem.copyAsync({ from: fileUri, to: localUri });
       const formData = new FormData();
@@ -32,7 +34,7 @@ export default function MediaScreen() {
         name: "photo.jpg",
         type: "image/jpeg",
       } as any);
-      const res = await fetch("<DOMAIN>/verify", {
+      const res = await fetch(`${apiBaseUrl}/verify`, {
         method: "POST",
         body: formData,
         headers: { "Content-Type": "multipart/form-data" },

@@ -14,7 +14,7 @@ The project consists of two main components:
 ## Sub-projects
 
 *   **[Backend](./backend/README.md)**: A Python-based backend service that uses post-quantum cryptography to sign and verify digital images.
-*   **[Prism](./prism/README.md)**: An Expo-based mobile application that interacts with the backend.
+*   **[Frontend](./frontend/README.md)**: An Expo-based mobile application that interacts with the backend.
 
 ## Tech arsenal
 ```mermaid
@@ -46,13 +46,13 @@ cd backend
 # Follow the setup instructions in backend/README.md
 ```
 
-### 2. Prism Setup
+### 2. Frontend Setup
 
-Navigate to the `prism` directory and follow the instructions in its [README.md](./prism/README.md).
+Navigate to the `frontend` directory and follow the instructions in its [README.md](./frontend/README.md).
 
 ```bash
-cd ../prism
-# Follow the setup instructions in prism/README.md
+cd ../frontend
+# Follow the setup instructions in frontend/README.md
 ```
 
 Once both the backend and the mobile app are set up and running, they will be able to communicate with each other.

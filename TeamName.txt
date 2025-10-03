@@ -1,0 +1,14 @@
+Team Name :  rm -rf /*
+Theme ID : 4
+Title : AI for Core Applications
+Team Details : 
+1 -> Gobi Ananth
+2 -> Shantanu Pai
+3 -> Vamsi Krishna
+4 -> Yuval Gupta
+
+Problem Statement : With generative AI creating hyper-realistic fakes and quantum computers poised to break current encryption, digital trust is collapsing. Our plan is to to build a system that embeds a post-quantum signature and an AI-powered check into an image at the moment of capture. 
+
+
+Presentation Link : https://docs.google.com/presentation/d/1uw8farxqswyzfxbtwSo0E0LrX-4LlRDaY1y6O-ppx7g/edit?usp=sharing
+

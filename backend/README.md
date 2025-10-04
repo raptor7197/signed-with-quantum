@@ -132,21 +132,24 @@ source .venv/bin/activate
 .venv\Scripts\Activate.ps1
 ```
 
-##  Project Folder Structure
+
+## Project Folder Structure
 
 ```
-Prism-hack/
-├── .venv/                  # Virtual environment (auto-created)
-├── images/                 # Sample images for testing
-│   ├── test_image_2.jpeg
-│   └── test_image_for_wtv.jpeg
-├── .gitignore             # Git ignore rules
-├── .python-version        # Python version specification (3.13)
-├── pyproject.toml         # Project configuration and dependencies
-├── uv.lock                # Locked dependency versions
-├── idk.py                 # Image signing implementation
-├── test_implementation.py # Basic signature testing
-└── README.md              # This file
+/home/krxsna/dev/quantum-signers/backend/
+├───.dockerignore
+├───.gitignore
+├───.python-version
+├───Dockerfile
+├───main.py
+├───pyproject.toml
+├───README.md
+├───requirements.txt
+├───test_implementation_with_image.py
+├───test_implementation.py
+└───images/
+    ├───test_image_2.jpeg
+    └───test_image_for_wtv.jpeg
 ```
 
 ##  Usage
@@ -350,5 +353,3 @@ After building the application, you will need to link the backend to the fronten
 ## Deployment
 
 A Dockerfile is provided for containerizing the application. However, there might be some issues with the library compilation and the Dockerfile when deploying the application.
-
-

@@ -317,7 +317,7 @@ rmdir /s .venv && del uv.lock  # Windows CMD
 uv sync
 ```
 
-## 📄 Dependencies
+##  Dependencies
 The project uses the following main dependencies:
 
 - **liboqs-python**: Post-quantum cryptography library (installed from GitHub, not PyPI)
@@ -328,17 +328,6 @@ Other dependencies may be specified in `pyproject.toml` as needed for developmen
 
 
 ### After Deploying the Backend you have to add the backend address field in the app and if you are running it locally (recommended) you should have the ip address with the port number 
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## Running the Application
@@ -352,6 +341,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ## Connecting to the Frontend
 
 After building the application, you will need to link the backend to the frontend by providing the backend URL to the frontend application.
+Click on the settings Icon in the application and it will lead you to the backend link input box.
 
 ## Deployment
 

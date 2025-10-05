@@ -11,4 +11,5 @@ Problem Statement : With generative AI creating hyper-realistic fakes and quantu
 
 
 Presentation Link : https://docs.google.com/presentation/d/1uw8farxqswyzfxbtwSo0E0LrX-4LlRDaY1y6O-ppx7g/edit?usp=sharing
+Demo Link : https://drive.google.com/file/d/1e_XrOGWeFHnWrKKPAJSh8IHjk1l9ysde/view?usp=sharing
 

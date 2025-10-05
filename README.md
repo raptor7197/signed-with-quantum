@@ -4,19 +4,22 @@ This project is a repository containing two sub-projects: a backend service for 
 
 ## About the Project
 
-The Quantum Signers project is a quantum-safe cryptographic signature implementation. It utilizes post-quantum cryptography algorithms to sign and verify digital images, ensuring their authenticity and integrity in a post-quantum computing world, making your data Quantum safe
+The Quantum Signers project is a quantum-safe cryptographic signature implementation. It utilizes post-quantum cryptography algorithms to sign and verify digital images, ensuring their authenticity and integrity in a post-quantum computing world, making your data Quantum safe.
 
 The project consists of two main components:
 
-*   A **backend service** built with Python and FastAPI, which exposes an API for signing and verifying images using the Dilithium2 algorithm from the Open Quantum Safe (OQS) library.  You have to Deploy tha backend and configure the link before Using the Application more in the 
+*   A **backend service** built with Python and FastAPI, which exposes an API for signing and verifying images using the Dilithium2 algorithm from the Open Quantum Safe (OQS) library. You have to deploy the backend and configure the link before using the application.
 
 *   A **mobile application** built with React Native (Expo) that allows users to interact with the backend service to sign and verify images.
 
- Demo Link : https://drive.google.com/file/d/1e_XrOGWeFHnWrKKPAJSh8IHjk1l9ysde/view?usp=sharing
+## Submissions : 
+Demo Link: https://drive.google.com/file/d/1e_XrOGWeFHnWrKKPAJSh8IHjk1l9ysde/view?usp=sharing
 
-![Block Diagram](https://raw.githubusercontent.com/Quantum-Signers/signed-with-quantum/main/Block%20Diagram.png)
+Presentation Link : https://docs.google.com/presentation/d/1uw8farxqswyzfxbtwSo0E0LrX-4LlRDaY1y6O-ppx7g/edit?usp=sharing
 
-## Sub-parts of the project
+<img src="https://raw.githubusercontent.com/Quantum-Signers/signed-with-quantum/main/Block%20Diagram.png" alt="Block Diagram">
+
+
 
 *   **[Backend](./backend/README.md)**: A Python-based backend service that uses post-quantum cryptography to sign and verify digital images.
 *   **[Frontend](./frontend/README.md)**: An Expo-based mobile application that interacts with the backend.
@@ -41,7 +44,8 @@ D --> D2["Liboqs Library "]
 ## Global Setup
 
 To set up and run this project, you will need to follow the setup instructions for each sub-project individually.
-Further descriptions have been provided in the respective Readme.md Files
+Further descriptions have been provided in the respective README.md files.
+
 ### 1. Backend Setup
 
 Navigate to the `backend` directory and follow the instructions in its [README.md](./backend/README.md).
@@ -61,5 +65,5 @@ cd ../frontend
 ```
 
 Once both the backend and the mobile app are set up and running, they will be able to communicate with each other.
-make sure to Configure the deployed backend link in the App otherwise the app won't work .
+Make sure to configure the deployed backend link in the app otherwise the app won't work.
 

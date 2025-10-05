@@ -244,7 +244,7 @@ python -m pytest
 
 ##  Troubleshooting
 
-### Common Issues
+### Common Issues that might occur 
 
 #### 1. liboqs-python Build Fails
 
@@ -325,6 +325,9 @@ The project uses the following main dependencies:
 - **Pillow** (>=11.3.0): Python Imaging Library for image processing
 
 Other dependencies may be specified in `pyproject.toml` as needed for development or testing. 
+
+
+### After Deploying the Backend you have to add the backend address field in the app and if you are running it locally (recommended) you should have the ip address with the port number 
 
 
 

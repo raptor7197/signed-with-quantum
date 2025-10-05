@@ -14,11 +14,7 @@ The project consists of two main components:
 
  Demo Link : https://drive.google.com/file/d/1e_XrOGWeFHnWrKKPAJSh8IHjk1l9ysde/view?usp=sharing
 
-```markdown
-![Block Diagram](Block%20Diagram.png)
-```
-
-> Note: Spaces in file names should be replaced with `%20` or you can rename the file to avoid spaces (e.g., `Block_Diagram.png`).
+![Block Diagram](https://raw.githubusercontent.com/Quantum-Signers/signed-with-quantum/main/Block%20Diagram.png)
 
 ## Sub-parts of the project
 

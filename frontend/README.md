@@ -35,7 +35,7 @@ npx expo prebuild
 
 ### Building with EAS
 
-Development build (APK):
+#### Development build (APK):
 
 ```bash
 eas build --platform android --profile development
@@ -47,10 +47,14 @@ Start the Expo development server for local development:
 npx expo start
 ```
 
-Preview build (APK):
+#### Preview build (APK):
 
 ```bash
 eas build --platform android --profile preview
 ```
 
 The generated APK can be downloaded and installed for testing.
+
+**Note:** You must have an [Expo account](https://expo.dev/signup) and be logged in before running any EAS build commands.  
+- Create an account here: [Signup](https://expo.dev/signup).
+- For more details on using Expo accounts and EAS, check the official docs: [Expo EAS](https://docs.expo.dev/eas/).

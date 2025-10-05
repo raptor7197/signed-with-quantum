@@ -12,7 +12,7 @@ The project consists of two main components:
 
 *   A **mobile application** built with React Native (Expo) that allows users to interact with the backend service to sign and verify images.
 
-# Demo Link : https://drive.google.com/file/d/1e_XrOGWeFHnWrKKPAJSh8IHjk1l9ysde/view?usp=sharing
+ Demo Link : https://drive.google.com/file/d/1e_XrOGWeFHnWrKKPAJSh8IHjk1l9ysde/view?usp=sharing
 
 ## Sub-parts of the project
 

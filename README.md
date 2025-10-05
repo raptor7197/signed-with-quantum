@@ -59,7 +59,5 @@ cd ../frontend
 ```
 
 Once both the backend and the mobile app are set up and running, they will be able to communicate with each other.
-
-### Submissions 
-Video Link  :  tbd 
+make sure to Configure the deployed backend link in the App otherwise the app won't work .
 

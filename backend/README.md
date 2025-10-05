@@ -136,7 +136,7 @@ source .venv/bin/activate
 ## Project Folder Structure
 
 ```
-/home/krxsna/dev/quantum-signers/backend/
+/quantum-signers/backend/
 ├───.dockerignore
 ├───.gitignore
 ├───.python-version
